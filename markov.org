@@ -1,0 +1,10 @@
+*** MDP
+S: State Space
+A: Action Space
+P(r, s'| s, a): A transition probability distribution
+
+
+*** Partially Observed MDPs
+Instead of observing full state s, agent observes y, y ~ P(y|s)
+
+*** Deterministic Policies a = \Pi
