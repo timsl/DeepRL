@@ -1,0 +1,29 @@
+*** Nonstationary problem
+Ri = reward received after ith selection of this action
+Qₙ = estimate of its action value after selected n-1 times
+
+Environments are often changing over time, weight recent rewards more heavily
+than long-past ones. Example solution:
+
+Qₙ₊₁ = Qₙ + α[Rₙ-Qₙ]
+   
+*** Initial Values
+Initial values of Q₁(a) are biased. They can also be used to 
+encourage exploration. Instead of setting them to zero, one 
+could set them to high values. If they are set higher than the 
+real rewards the learner tries the "fake" higher values as its
+greedy choice and thus exploration is encouraged. Works good on
+stationary problems, on nonstationary problems it doesn't affect
+the solution as much (rewards change over time meaning our initial
+values won't affect exploration later on).
+
+*** Upper-Confidence-Bound Action Selection
+ε-greedy randomly chooses over all actions. Instead select among
+non-greedy actions according to potential for actually being optimal.
+
+Aₜ = argmaxₐ[Qₜ(a)+c\sqrt(logₜ)/Nₜ(a)]
+Nₜ(a) = number of times a has been selected prior to time t.
+c > 0 controls the degree of exploration.
+sqrt term is a measure of uncertainty or variance in the estimate
+of a's value.
+

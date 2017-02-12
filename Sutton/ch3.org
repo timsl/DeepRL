@@ -1,0 +1,13 @@
+*** Agent-Environment Interface
+Agent = Learner and Decision Maker
+Environment = Thing agent interacts with. Gives rewards.
+
+Agent => (Action) => Environment => (Stateᵢ and Rewardᵢ) => Agent.
+
+Sₜ state at time t
+Aₜ from A(Sₜ), where A(Sₜ)= set of actions available in state Sₜ.
+At next timestep agent receives numerical reward Rₜ₊1
+
+
+
+

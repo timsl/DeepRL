@@ -15,8 +15,9 @@ def main():
     N = np.zeros(10)
     epsilon = 0.1
     
-    for i in range(1000):
-        if (np.random.rand(1) > epsilon):
+    n = 10000
+    for i in range(n):
+        if (np.random.rand(1) < epsilon):
             A = np.argmax(Q)
         else:
             A = np.random.randint(0, k, 1)
@@ -25,7 +26,7 @@ def main():
         N[A] = N[A] + 1
         Q[A] = Q[A] + 1/N[A]*(R-Q[A])
 
-    print(np.sum(Q))
+    print(np.sum(Q)/n)
 
 if __name__ == "__main__":
     main()
