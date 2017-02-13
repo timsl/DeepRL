@@ -8,6 +8,34 @@ Sₜ state at time t
 Aₜ from A(Sₜ), where A(Sₜ)= set of actions available in state Sₜ.
 At next timestep agent receives numerical reward Rₜ₊1
 
+Policy π = mapping from states to probabilities of selecting each possible action
+
+*** Goals and Rewards
+At each time step, reward is a number Rₜ ∈ R, we want to maximize this reward.
+
+Discounted return: Gₜ = Rₜ₊₁ + γRₜ₊₂+γ²Rₜ₊₃ = ∑ γᵏRₜ₊ₖ₊₁, 0 <= γ <= 1
 
 
+Episodic task: separate episodes. Continuing task: non separate episodes.
+
+Markov property: env response at t+1 depends only on the state and action
+representations at t.
+
+p(s', r| s, a) = Pr{Sₜ₊₁ = s', Rₜ₊₁ = r | Sₜ = s, Aₜ = a}
+
+
+*** Markov Decision Process
+RL task that satisfies markov property = MDP.
+
+probability of each possible pair of next state and reward given s, a:
+p(s',r|s,a) = Pr{Sₜ₊₁ = s', Rₜ₊₁ = r | Sₜ = s, Aₜ = a}
+
+expected reward for state action pairs:
+r(s, a) = E[Rₜ₊₁|Sₜ = s, Aₜ=a] = ∑ᵣr∑ₛp(s',r|s,a)
+
+state-transition probabilities:
+p(s'|s, a) = Pr{Sₜ₊₁=s'|Sₜ=s, Aₜ=a} = ∑ᵣp(s', r|s, a)
+
+expected rewards for state-action-next-state triplets:
+r(s,a,s') = E[Rₜ₊₁|Sₜ=s, Aₜ=a, Sₜ₊₁=s'] = ∑ᵣrp(s',r|s,a) / p(s'|s,a)
 
