@@ -39,3 +39,6 @@ p(s'|s, a) = Pr{Sₜ₊₁=s'|Sₜ=s, Aₜ=a} = ∑ᵣp(s', r|s, a)
 expected rewards for state-action-next-state triplets:
 r(s,a,s') = E[Rₜ₊₁|Sₜ=s, Aₜ=a, Sₜ₊₁=s'] = ∑ᵣrp(s',r|s,a) / p(s'|s,a)
 
+*** Value Functions
+vπ(s) = Eπ[Gₜ|Sₜ=s] = Eπ[∑γᵏRₜ₊ₖ₊₁|Sₜ=s]
+
